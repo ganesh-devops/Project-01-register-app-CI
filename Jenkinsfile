@@ -12,7 +12,7 @@ pipeline {
         }
         stage('checkout form SCM') {
             steps {
-                git branch 'main', credentials:'GitHub', url:'https://github.com/ganesh-devops/Project-01-register-app-CI.git'
+                git branch: 'main', credentials:'GitHub', url:'https://github.com/ganesh-devops/Project-01-register-app-CI.git'
             }
         }
         stage('Build Application') {
