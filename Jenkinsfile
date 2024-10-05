@@ -4,26 +4,30 @@ pipeline {
         jdk 'Java17'
         maven 'Maven3'
     }
-    stages {
-        stage('Cleanup Workspace') {
+    stages{
+        stage("Cleanup Workspace"){
             steps {
-                cleanWS()
+                cleanWs()
+                }
             }
-        }
-        stage('checkout form SCM') {
+
+        stage("checkout form SCM") {
             steps {
                git branch: 'main', credentialsId: 'GitHub', url:'https://github.com/ganesh-devops/Project-01-register-app-CI.git'
             }
         }
-        stage('Build Application') {
+
+        stage("Build Application") {
             steps {
                 sh "mvn clean package"
             }
         }
-        stage('Build Application') {
+
+        stage("Build Test") {
             steps {
                 sh "mvn Test"
             }
         }
+
     }
 }
