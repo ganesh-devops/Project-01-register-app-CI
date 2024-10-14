@@ -36,10 +36,10 @@ pipeline {
 				script {
 					withSonarQubeEnv(credentialsId: 'Jenkins-sonar-token') { 
 					sh "mvn sonar:sonar"
-					}
 				}
 			}
 		}
+	}
 
 
      }
