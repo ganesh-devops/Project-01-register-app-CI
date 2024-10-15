@@ -7,13 +7,13 @@ pipeline{
     stages{
         stage('Cleanup Workspace'){
             steps {
-                cleanWs
+                cleanWs()
             }
         }
             
         stage('Checkout for SCM'){
             steps {
-                git branch:'main', credentialsId:'GitHub', URL:'https://github.com/ganesh-devops/Project-01-register-app-CI.git'
+                git branch:'main', credentialsId:'GitHub', url:'https://github.com/ganesh-devops/Project-01-register-app-CI.git'
             }
         }
 
